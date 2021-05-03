@@ -1,0 +1,49 @@
+.main {
+  display: block;
+
+  justify-content: space-around;
+}
+
+.container {
+  position: relative;
+  height: 257px;
+  width: 200px;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.poster {
+  height: 257px;
+  width: 200px;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.container:hover .description {
+  visibility: visible;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .main {
+    display: grid;
+    /* grid-template-columns: repeat(2, 40%); */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-gap: 1rem;
+  }
+}

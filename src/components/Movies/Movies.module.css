@@ -1,0 +1,52 @@
+.main {
+  min-height: 30vh;
+  border-left: 20px solid rgb(235, 155, 35);
+  text-align: left;
+  font-size: 1.6rem;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2fr 0.3fr;
+  grid-gap: 1rem;
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+}
+.title {
+  text-align: right;
+}
+.image {
+  display: none;
+}
+.button {
+  color: white;
+  background-color: rgb(235, 155, 35);
+  padding: 0.8em 0.8em;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .main {
+    border-left: none;
+    text-align: center;
+    min-height: 50vh;
+  }
+  .container {
+    grid-gap: 1rem;
+    padding-right: 2rem;
+  }
+  .title {
+    text-align: right;
+  }
+  .image {
+    display: inline;
+    top: 10;
+    left: 0;
+    width: 60%;
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(0 0, 65% 0, 65% 100%, 0% 100%);
+  }
+}
