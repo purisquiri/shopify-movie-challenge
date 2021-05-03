@@ -10,14 +10,11 @@ import Search from "./components/Search/Search";
 //Styles
 import styles from "./App.module.css";
 
-//localStorage
-// const pastNominees = JSON.parse(localStorage.getItem("pastNominees"));
-
 function App() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [nominees, setNominees] = useState([]);
-  const key = process.env.REACT_APP_API_KEY;
+  const { REACT_APP_API_KEY } = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     setNominees(
@@ -34,9 +31,10 @@ function App() {
 
   const fetchData = () => {
     axios
-      .get(`https://www.omdbapi.com/?s=${query}&apikey=${key}&type=movie`)
+      .get(
+        `https://www.omdbapi.com/?s=${query}&apikey=${REACT_APP_API_KEY}&type=movie`
+      )
       .then((response) => {
-        // console.log(response.data.Search);
         const newData = response.data.Search?.map((movie) => {
           movie.isNominate = nominees?.some((el) => el.imdbID === movie.imdbID);
           return movie;
@@ -58,7 +56,6 @@ function App() {
   const handleNominee = (movie) => {
     if (nominees.length < 5) {
       setNominees((prevState) => [...prevState, movie]);
-      // localStorage.setItem("pastNominees", JSON.stringify(nominees));
     } else {
       alert("You can only nominate up to 5 movies, and not the same one");
     }
@@ -68,24 +65,11 @@ function App() {
     setNominees(nominees.filter((movie) => movie.imdbID !== movieId));
   };
 
-  // const disableButton = (id) => {
-  //   const alreadyExist = nominees.map((element) => element.imdbID === id);
-
-  //   if (alreadyExist) {
-  //     setIsNominate(true);
-  //   }
-  // };
-
   return (
     <div className={styles.main}>
       <div className={styles.title}>The Shoppies</div>
       <Search query={query} setQuery={setQuery} handleSearch={handleSearch} />
-      <Movies
-        data={data}
-        query={query}
-        handleNominee={handleNominee}
-        // isNominate={isNominate}
-      />
+      <Movies data={data} query={query} handleNominee={handleNominee} />
       <Nominees nominees={nominees} deleteNominate={deleteNominate} />
     </div>
   );
