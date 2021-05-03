@@ -12,7 +12,6 @@ export default function Nominees({ nominees, deleteNominate }) {
         <div key={movie.imdbID} className={styles.container}>
           <img src={movie.Poster} alt="movie" className={styles.poster} />
           <p className={styles.description}>
-            {movie.Title}
             <button
               onClick={() => deleteNominate(movie.imdbID)}
               className={styles.button}

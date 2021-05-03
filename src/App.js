@@ -10,15 +10,26 @@ import Search from "./components/Search/Search";
 //Styles
 import styles from "./App.module.css";
 
+//localStorage
+// const pastNominees = JSON.parse(localStorage.getItem("pastNominees"));
+
 function App() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [nominees, setNominees] = useState([]);
-  // const [isNominate, setIsNominate] = useState(false);
   const key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
+    setNominees(
+      window.localStorage.getItem("nominees")
+        ? JSON.parse(localStorage.getItem("nominees"))
+        : []
+    );
+  }, []);
+
+  useEffect(() => {
     fetchData();
+    localStorage.setItem("nominees", JSON.stringify(nominees));
   }, [nominees]);
 
   const fetchData = () => {
@@ -47,6 +58,7 @@ function App() {
   const handleNominee = (movie) => {
     if (nominees.length < 5) {
       setNominees((prevState) => [...prevState, movie]);
+      // localStorage.setItem("pastNominees", JSON.stringify(nominees));
     } else {
       alert("You can only nominate up to 5 movies, and not the same one");
     }

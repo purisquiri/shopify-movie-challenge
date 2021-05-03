@@ -8,8 +8,8 @@
   position: relative;
   height: 257px;
   width: 200px;
-  align-items: center;
-  padding: 1rem 0;
+  /* align-items: center; */
+  padding: 1rem 1rem;
 }
 
 .poster {
@@ -27,6 +27,7 @@
   color: #fff;
   visibility: hidden;
   opacity: 0;
+  text-align: center;
 
   /* transition effect. not necessary */
   transition: opacity 0.2s, visibility 0.2s;
@@ -35,15 +36,20 @@
 .container:hover .description {
   visibility: visible;
   opacity: 1;
-  margin: 0 auto;
+  cursor: pointer;
+}
+.button {
+  color: white;
+  background-color: rgb(235, 155, 35);
+  padding: 0.8em 0.8em;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
 }
 
 @media (min-width: 768px) {
   .main {
-    display: grid;
-    /* grid-template-columns: repeat(2, 40%); */
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    grid-gap: 1rem;
+    display: inline-flex;
+    padding: 1rem 1rem;
   }
 }
