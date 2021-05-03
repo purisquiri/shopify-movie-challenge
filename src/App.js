@@ -14,7 +14,8 @@ function App() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [nominees, setNominees] = useState([]);
-  const { REACT_APP_API_KEY } = process.env.REACT_APP_API_KEY;
+  const { REACT_APP_API_KEY } = process.env;
+  // const key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     setNominees(
