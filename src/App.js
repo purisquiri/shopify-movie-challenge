@@ -34,7 +34,7 @@ function App() {
 
   const fetchData = () => {
     axios
-      .get(`http://www.omdbapi.com/?s=${query}&apikey=${key}&type=movie`)
+      .get(`https://www.omdbapi.com/?s=${query}&apikey=${key}&type=movie`)
       .then((response) => {
         // console.log(response.data.Search);
         const newData = response.data.Search?.map((movie) => {
