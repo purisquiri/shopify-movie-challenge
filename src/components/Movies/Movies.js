@@ -7,8 +7,8 @@ export default function Movies({ data, query, handleNominee }) {
     <div className={styles.main}>
       results for {query}
       <img src={oscars} alt="oscar" className={styles.image} />
-      {data?.map((movie) => (
-        <div key={movie.imdbID} className={styles.container}>
+      {data?.map((movie, index) => (
+        <div key={`movie-${index}`} className={styles.container}>
           <span className={styles.title}>
             {movie.Title} {movie.Year}
           </span>

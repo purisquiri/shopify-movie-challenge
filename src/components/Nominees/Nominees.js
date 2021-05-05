@@ -1,10 +1,8 @@
 import React from "react";
 
 import styles from "./Nominees.module.css";
-//import movie from "./movie.jpeg";
 
 export default function Nominees({ nominees, deleteNominate }) {
-  //console.log(movies);
   return (
     <div className={styles.main}>
       You can Nominate up to five:

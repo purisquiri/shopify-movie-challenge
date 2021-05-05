@@ -47,8 +47,6 @@ function App() {
       });
   };
 
-  console.log(data);
-
   const handleSearch = (e) => {
     e.preventDefault();
     fetchData();
