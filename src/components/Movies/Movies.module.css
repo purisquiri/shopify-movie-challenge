@@ -25,13 +25,24 @@
   border-radius: 2rem;
   font-weight: bold;
   border: none;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  color: white;
+  background-color: rgb(96, 96, 96);
+  padding: 0.8em 0.8em;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+  cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
   .main {
     border-left: none;
     text-align: center;
-    min-height: 50vh;
+    min-height: 45vh;
   }
   .container {
     grid-gap: 1rem;
@@ -44,10 +55,16 @@
     display: inline;
     top: 10;
     left: 0;
-    width: 50%;
-    height: 50vh;
+    width: 45%;
+    height: 45vh;
     position: absolute;
     z-index: -1;
     clip-path: polygon(0 0, 65% 0, 65% 100%, 0% 100%);
+  }
+  .button {
+    padding: 0.6em 0.6em;
+  }
+  .buttonDisabled {
+    padding: 0.6em 0.6em;
   }
 }

@@ -14,10 +14,10 @@ export default function Movies({ data, query, handleNominee }) {
           </span>
           <button
             onClick={() => handleNominee(movie)}
-            className={styles.button}
+            className={movie.isNominate ? styles.buttonDisabled : styles.button}
             disabled={movie.isNominate}
           >
-            Nominate
+            {movie.isNominate ? "Nominated" : "Nominate"}
           </button>
         </div>
       ))}

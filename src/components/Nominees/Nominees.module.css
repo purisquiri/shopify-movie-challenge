@@ -1,7 +1,7 @@
 .main {
-  display: block;
-
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -49,7 +49,12 @@
 
 @media (min-width: 768px) {
   .main {
-    display: inline-flex;
+    display: inline;
     padding: 1rem 1rem;
+  }
+
+  .nomineeContainer {
+    display: flex;
+    justify-content: center;
   }
 }

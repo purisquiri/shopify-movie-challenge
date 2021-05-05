@@ -20,3 +20,9 @@
 .input:focus {
   background-color: rgb(231, 197, 123);
 }
+
+@media (min-width: 768px) {
+  .input {
+    width: 30%;
+  }
+}
