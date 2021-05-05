@@ -8,12 +8,16 @@ body {
 }
 
 .main {
-  /* text-align: center; */
-  /* background-color: lightgoldenrodyellow; */
   padding-top: 0.5rem;
   width: 100%;
 }
 
 .title {
   font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    text-align: center;
+  }
 }

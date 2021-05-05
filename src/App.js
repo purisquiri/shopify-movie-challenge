@@ -15,7 +15,6 @@ function App() {
   const [query, setQuery] = useState("");
   const [nominees, setNominees] = useState([]);
   //const { REACT_APP_API_KEY } = process.env;
-  // const key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     setNominees(
@@ -56,7 +55,7 @@ function App() {
     if (nominees.length < 5) {
       setNominees((prevState) => [...prevState, movie]);
     } else {
-      alert("You can only nominate up to 5 movies, and not the same one");
+      alert("You can only nominate up to 5 movies");
     }
   };
 
