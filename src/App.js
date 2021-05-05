@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [nominees, setNominees] = useState([]);
-  const { REACT_APP_API_KEY } = process.env;
+  //const { REACT_APP_API_KEY } = process.env;
   // const key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
   const fetchData = () => {
     axios
       .get(
-        `https://www.omdbapi.com/?s=${query}&apikey=${REACT_APP_API_KEY}&type=movie`
+        `https://www.omdbapi.com/?s=${query}&apikey=${process.env.REACT_APP_API_KEY}&type=movie`
       )
       .then((response) => {
         const newData = response.data.Search?.map((movie) => {
